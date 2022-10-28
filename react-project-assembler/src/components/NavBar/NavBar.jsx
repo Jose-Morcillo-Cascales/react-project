@@ -1,5 +1,4 @@
 import ShoppingCart from "../ShoppingCart/ShoppingCart"
-
 const NavBar = () => {
     return(
         <nav className="navbar bg-light">
@@ -11,7 +10,7 @@ const NavBar = () => {
             </div>
             <div className="dropdown">
                 <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown button
+                    Dropdown button 
                 </button>
                     <ul className="dropdown-menu"> 
                         <ShoppingCart />

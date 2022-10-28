@@ -3,7 +3,6 @@ import ProductCard from './../ProductCard/ProductCard';
 import {products} from './../../assets/db/db'
 
 const ProductContainer = () => {
-  console.log(products)
   return (
     
     <>

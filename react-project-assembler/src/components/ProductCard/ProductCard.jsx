@@ -1,5 +1,4 @@
-import ButtonCard from "./ButtonCard"
-
+import ButtonCard from './../ButtonCard/ButtonCard'
 const ProductCard = (props) => {
     
     return(
@@ -9,7 +8,7 @@ const ProductCard = (props) => {
         <img src={props.img} alt={props.name}/>
         <p>{props.price}</p>
         
-            <ButtonCard key ={props.id}/>
+            <ButtonCard key ={props.id} id ={props.id}/>
         
     </div>
     )
