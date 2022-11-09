@@ -1,15 +1,15 @@
 import { useState } from "react"
-import {products} from './../../assets/db/db'
+import  products  from "../../assets/db/db"
 const ButtonCard = ({value=0,id}) => {
   
 
-    
-    let quantity = JSON.parse(localStorage.getItem('shoppingCart')).filter(product=>product.id===id).length
+     const dataBaseLength =JSON.parse(localStorage.getItem('shoppingCart')).length
+     let quantity = JSON.parse(localStorage.getItem('shoppingCart')).filter(product=>product.id===id).length
     
 
-    const [counter, setCounter] = useState((JSON.parse(localStorage.getItem('shoppingCart')).length>0)? quantity : value)
+     const [counter, setCounter] = useState(dataBaseLength? quantity : value)
 
-   
+    
     
     
     const increaseValue = () => {
@@ -17,7 +17,6 @@ const ButtonCard = ({value=0,id}) => {
       if(localStorage.getItem('shoppingCart')){
 
           
-        console.log(JSON.parse(localStorage.getItem('shoppingCart')))
         
         addToCart()
         setCounter(prev=>prev + 1)
@@ -25,7 +24,6 @@ const ButtonCard = ({value=0,id}) => {
       }else{
 
         localStorage.setItem('shoppingCart',"[]")
-        console.log(JSON.parse(localStorage.getItem('shoppingCart')))
 
         increaseValue()
       }
@@ -33,13 +31,14 @@ const ButtonCard = ({value=0,id}) => {
     };
 
     const addToCart = () =>{
+      
       let product= products.filter(product=>product.id===id)
       let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'))
-      console.log(shoppingCart)
+     
 
       shoppingCart.push(product[0])
       localStorage.setItem('shoppingCart',JSON.stringify(shoppingCart))
-      console.log(shoppingCart)
+      
     }
 
     const substractValue = () => {
@@ -63,7 +62,6 @@ const ButtonCard = ({value=0,id}) => {
         if(shoppingCart[i].id===id){
           shoppingCart.splice(i,1)
           localStorage.setItem('shoppingCart',JSON.stringify(shoppingCart))
-          console.log(shoppingCart)
           
         }
       }

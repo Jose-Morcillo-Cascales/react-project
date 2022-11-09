@@ -1,0 +1,23 @@
+{
+    "products" : 
+[
+    {
+        "id":1,
+        "name": "special cutlery",
+        "price":546,
+        "img":"https://res.cloudinary.com/duwchmamw/image/upload/v1667993015/individual%20react%20project/cubierto_hzlwnp.jpg"
+    },
+    {
+        "id":2,
+        "name": "watering pot",
+        "price":624,
+        "img":"https://res.cloudinary.com/duwchmamw/image/upload/v1667993019/individual%20react%20project/regadera_t0v2tv.jpg"
+    },
+    {
+        "id":3,
+        "name":"wine glass",
+        "price":423,
+        "img":"https://res.cloudinary.com/duwchmamw/image/upload/v1667992997/individual%20react%20project/vino_enorvw.jpg"
+    }
+]
+}
