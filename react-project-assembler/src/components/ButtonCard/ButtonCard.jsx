@@ -1,7 +1,21 @@
-import { useState } from "react"
-import  products  from "../../assets/db/db"
+import { useState,useEffect } from "react"
+import { apiConection } from "../../api/api"
 const ButtonCard = ({value=0,id}) => {
+
+  const [products,setProducts] = useState([])
   
+  const url = "http://localhost:5000/products"
+  
+
+  useEffect(()=>{
+    const conection = async () => {
+      const data = await apiConection(url)
+      setProducts(data)
+      
+    }
+   conection()
+   
+  },[url])
 
      const dataBaseLength =JSON.parse(localStorage.getItem('shoppingCart')).length
      let quantity = JSON.parse(localStorage.getItem('shoppingCart')).filter(product=>product.id===id).length

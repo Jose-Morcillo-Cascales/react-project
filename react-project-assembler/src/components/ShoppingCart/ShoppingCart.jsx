@@ -1,14 +1,19 @@
 import React from 'react'
 
-const ShoppingCart = () => {
-
+const ShoppingCart = ({state}) => {
+console.log(state)
  
 
   return (
     
-   
-<h1>holi</h1>
-                   
+   <ul>
+    {state?state.map((myProduct,index) =>{
+     return <li key={index}>
+     {myProduct.name}
+     <button>delete</button>
+     </li>
+    }):"patata"}
+   </ul>   
                    
   )
 }

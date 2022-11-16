@@ -1,18 +1,21 @@
 import './App.css'
 import NavBar from './components/NavBar/NavBar'
-import ProductContainer from './components/ProductContainer/ProductContainer';
 import Footer from './components/Footer/Footer'
+import AllRoutes from './Routes/AllRoutes';
+import { BrowserRouter } from 'react-router-dom';
 function App() {
 
 
   return (
    
     <>
-    
-    <NavBar />
-    <ProductContainer />
-    <Footer />
+    <BrowserRouter>
+      <NavBar />
+      <AllRoutes/>
+      <Footer />
+    </BrowserRouter>
     </>
+
   );
 }
 
