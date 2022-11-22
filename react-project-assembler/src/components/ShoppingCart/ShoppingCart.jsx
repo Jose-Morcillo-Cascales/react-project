@@ -1,28 +1,31 @@
-import React from 'react'
 
-const ShoppingCart = ({state}) => {
-console.log(state)
+import { useContext } from 'react';
+import { ShoppingCartContext } from '../../context/shoppingCartContext/shoppingCartContext';
+import {ButtonCard} from './../'
+
+
+
+const ShoppingCart = () => {
  
+  const {shoppingCart } = useContext(ShoppingCartContext);
+  //TODO Poner todos los datos de manera bonita ,el precio final y el checkout
 
-  return (
+
+
+ return (
+    <>
+      {shoppingCart?.map((product) =>{
+      return  <li key={product.id}>
+     <p>{product.name}</p> 
+     <ButtonCard></ButtonCard>
+      </li>
+     
+  })}  
+    </>
     
-   <ul>
-    {state?state.map((myProduct,index) =>{
-     return <li key={index}>
-     {myProduct.name}
-     <button>delete</button>
-     </li>
-    }):"patata"}
-   </ul>   
                    
   )
 }
 
 export default ShoppingCart
 
-/* <div className="dropdown-item">
-                    <p>Aqui habra un bucle donde se ira añadiendo los productos</p>
-                    <p>Cada producto estará en una lista que tambien tendra un boton de eliminar </p> 
-                    <button >Borrar lista</button>
-                    <button >Comprar</button>
-                   </div>  */

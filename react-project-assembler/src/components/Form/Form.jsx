@@ -1,8 +1,8 @@
 import React from 'react'
-
+//TODO hacer form entero!!
 const Form = () => {
   return (
-    <div></div>
+    <div>Soy un Form</div>
   )
 }
 

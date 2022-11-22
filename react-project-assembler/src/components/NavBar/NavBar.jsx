@@ -1,56 +1,60 @@
-// import { useEffect } from "react"
+// import { useContext } from 'react';
+// import { ShoppingCartContext } from '../../context/shoppingCartContext/shoppingCartContext';
+//  import {ShoppingCart} from '../';
 
+import {Container,Nav,Navbar,NavDropdown} from 'react-bootstrap'
 const NavBar = () => {
-    const cleanShoppingCart = () =>{
-        
-        localStorage.setItem('shoppingCart',"[]")
-
-    }
-    const printShoppingCart = (listProduct) =>{
-
-        listProduct.map(product=>{
-            console.log("patata")
-            return(
-            <li>
-                <p>holi</p>
-            </li>
-            
-            )
-        })
-
-    }
-
-     const ShoppingCartConditional= JSON.parse(localStorage.getItem('shoppingCart')) ? printShoppingCart(JSON.parse(localStorage.getItem('shoppingCart'))) : "no products"
     
-    
-    //  let getCartLocalStorage = JSON.parse(localStorage.getItem("items"));    
-    //  const listCart = getCartLocalStorage && getCartLocalStorage.map((item) => {     return (       <p key={item.id}>{item.name} {item.price} €</p>     )   }) || "no hay elementos";
-       
-        // useEffect(()=>printShoppingCart,JSON.parse(localStorage.getItem('shoppingCart')))
-      
+  // const {dispatch} = useContext(ShoppingCartContext);
     return(
-        <nav className="navbar bg-light">
-            <div className="container-fluid">
-            <a className="navbar-brand" href="./">
-                Aqui ira un logo
-            </a>
+        <Navbar bg="light" expand="lg">
+        <Container>
+          <Navbar.Brand href="./">Logo que es Home</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link href=" ./checkout">Cart</Nav.Link>
+              <Nav.Link href="./login">Log in</Nav.Link>
+              <Nav.Link href="./register">Register</Nav.Link>
 
-            </div>
-            <div className="dropdown">
-                <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown button 
-                </button>
-                <ul className="dropdown-menu"> 
-                        
-                    { ShoppingCartConditional}
-                    <li>
-                        <button onClick={cleanShoppingCart}>Soy un boton</button>
-                    </li>
-                </ul> 
-
-           </div>
+              <NavDropdown title="Icono del carro" id="basic-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">
+                  Another action
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.4">
+                  Separated link
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
         
-      </nav>
+           
+
+
+    //         <div className="container-fluid">
+            
+    //         </div>
+    //         <div className="dropdown">
+    //             <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    //                 Dropdown button 
+    //             </button>
+    //             <ul className="dropdown-menu"> 
+                       
+    //                 {/* <ShoppingCart/> */}
+                    
+    //                 <li>
+    //                     {/* <button onClick={cleanCart(dispatch)}>Soy un boton</button> */}
+    //                 </li>
+    //             </ul> 
+
+    //        </div>
+        
+    //   </nav>
     )
 }
 export default NavBar
