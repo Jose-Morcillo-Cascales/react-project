@@ -12,7 +12,7 @@ function App() {
     <>
     <ShoppingCartProvider> 
     <BrowserRouter>
-      <NavBar />
+       <NavBar />
       <AllRoutes/>
       <Footer />
     </BrowserRouter>

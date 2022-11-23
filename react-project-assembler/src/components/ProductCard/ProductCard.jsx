@@ -2,21 +2,21 @@ import {ButtonCard} from './../index'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import './ProductCard.css';
-import {quantity} from './../../utils/'
-const ProductCard = (props) => {
-    
+const ProductCard = ({id,name,price,img}) => {
+    //TODO Quantity
+
     return(
         
-        <Card border='info' key ={props.id} >
-            <Card.Img className = "m-1" variant="top" src={props.img} />
+        <Card border='info' key ={id} >
+            <Card.Img className = "m-1" variant="top" src={img} />
             <Card.Body>
-                <Card.Title>{props.name}</Card.Title>
-                <Card.Text>{quantity(props.id)}</Card.Text>
-                <ButtonCard key ={props.id} 
-                id ={props.id}  
-                name={props.name}
-                price={props.price}
-                img={props.img}/>
+                <Card.Title>{name}</Card.Title>
+                <ButtonCard key ={id} 
+                id ={id}  
+                name={name}
+                price={price}
+                img={img}
+                />
                 <Button variant="outline-info">More info</Button>
             </Card.Body>
         </Card>
