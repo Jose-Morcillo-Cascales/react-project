@@ -1,11 +1,10 @@
-// import { useContext } from 'react';
-// import { ShoppingCartContext } from '../../context/shoppingCartContext/shoppingCartContext';
-//  import {ShoppingCart} from '../';
+ import { useContext } from 'react';
+import { ShoppingCartContext } from '../../context/shoppingCartContext/shoppingCartContext';
 
-import {Container,Nav,Navbar,NavDropdown} from 'react-bootstrap'
+import {Col, Container,Nav,Navbar,NavDropdown, Row} from 'react-bootstrap'
 const NavBar = () => {
     
-  // const {dispatch} = useContext(ShoppingCartContext);
+   const {shoppingCart} = useContext(ShoppingCartContext);
     return(
         <Navbar bg="light" expand="lg">
         <Container>
@@ -18,15 +17,18 @@ const NavBar = () => {
               <Nav.Link href="./register">Register</Nav.Link>
 
               <NavDropdown title="Icono del carro" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
-                </NavDropdown.Item>
+              {shoppingCart?.map(product=>{
+                return( <NavDropdown.Item href="#action/3.1" key={product.id}>
+                  <Row>
+                    <Col>{product.name}</Col>
+                    <Col>{product.quantity}</Col>
+                    <Col>{product.price}</Col>
+                  </Row>
+                </NavDropdown.Item>)
+               
+              })}
+                
+                
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>

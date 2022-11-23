@@ -2,7 +2,6 @@ import {ButtonCard} from './../index'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import './ProductCard.css';
-import {quantity} from './../../utils/'
 const ProductCard = (props) => {
     
     return(
@@ -11,7 +10,6 @@ const ProductCard = (props) => {
             <Card.Img className = "m-1" variant="top" src={props.img} />
             <Card.Body>
                 <Card.Title>{props.name}</Card.Title>
-                <Card.Text>{quantity(props.id)}</Card.Text>
                 <ButtonCard key ={props.id} 
                 id ={props.id}  
                 name={props.name}

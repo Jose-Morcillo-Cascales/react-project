@@ -1,10 +1,10 @@
 import React from 'react'
-import {ShoppingCart,Form} from '../../components/'
+import {Form} from '../../components/'
 
 const Checkout = () => {
   return (
     <>
-    <ShoppingCart />
+   
     <Form />
     </>
 
