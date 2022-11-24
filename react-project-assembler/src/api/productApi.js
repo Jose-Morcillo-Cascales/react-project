@@ -1,5 +1,5 @@
 
-  export const apiConection = async () =>{
+  export const productsConection = async () =>{
     const url = "http://localhost:5000/products"
       try{
         const response =await fetch(url)

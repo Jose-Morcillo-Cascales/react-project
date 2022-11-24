@@ -1,7 +1,7 @@
 import {ProductCard} from './../';
 import { useEffect ,useState } from 'react';
 import { Container,Col,Row } from 'react-bootstrap';
-import { apiConection } from '../../api/api';
+import { productsConection } from '../../api/productApi';
 
 const ProductContainer = () => {
 
@@ -12,7 +12,7 @@ const ProductContainer = () => {
 
   useEffect(()=>{
     const conection = async () => {
-      const data = await apiConection()
+      const data = await productsConection()
       setProducts(data)
     }
     conection()
