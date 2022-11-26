@@ -1,8 +1,11 @@
  import { useContext } from 'react';
 import { ShoppingCartContext } from '../../context/shoppingCartContext/shoppingCartContext';
 import {Col, Container,Nav,Navbar,NavDropdown, Row,ButtonGroup,Button} from 'react-bootstrap'
+import { AuthContext } from '../../context/authContext/AuthContext';
 const NavBar = () => {
-    
+  //TODO poner diseño al boton 
+    const {user,logout} = useContext(AuthContext)
+    console.log(user)
    const {shoppingCart,dispatchCart} = useContext(ShoppingCartContext);
     return(
         <Navbar bg="light" expand="lg">
@@ -12,9 +15,9 @@ const NavBar = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href=" ./checkout">Cart</Nav.Link>
-              <Nav.Link href="./login">Log in</Nav.Link>
+              
+              {user?<Button onClick={()=>logout()}>Log out</Button>:<Nav.Link href="./login">Log in</Nav.Link>}
               <Nav.Link href="./register">Register</Nav.Link>
-
               <NavDropdown title="Icono del carro" id="basic-nav-dropdown">
                 {shoppingCart?.map(product=>{
                   return( 

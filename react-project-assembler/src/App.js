@@ -4,19 +4,22 @@ import Footer from './components/Footer/Footer'
 import AllRoutes from './Routes/AllRoutes';
 import {ShoppingCartProvider} from './context/shoppingCartContext/ShoppingCartProvider'
 import { BrowserRouter } from 'react-router-dom';
+import { AuthProvider } from './context';
 function App() {
 
 
   return (
    
     <>
-    <ShoppingCartProvider> 
-    <BrowserRouter>
-      <NavBar />
-      <AllRoutes/>
-      <Footer />
-    </BrowserRouter>
-    </ShoppingCartProvider> 
+    <AuthProvider>
+      <ShoppingCartProvider> 
+        <BrowserRouter>
+          <NavBar />
+          <AllRoutes/>
+          <Footer />
+        </BrowserRouter>
+      </ShoppingCartProvider> 
+    </AuthProvider>
     </>
 
   );

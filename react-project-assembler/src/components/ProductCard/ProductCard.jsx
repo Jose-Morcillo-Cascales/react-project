@@ -1,7 +1,7 @@
 import {ButtonCard} from './../index'
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import './ProductCard.css';
+import { Link } from 'react-router-dom';
 const ProductCard = (props) => {
     
     return(
@@ -15,7 +15,7 @@ const ProductCard = (props) => {
                 name={props.name}
                 price={props.price}
                 img={props.img}/>
-                <Button variant="outline-info">More info</Button>
+                <Link to={`/${props.id}`} variant="outline-info" >More info</Link>
             </Card.Body>
         </Card>
     
