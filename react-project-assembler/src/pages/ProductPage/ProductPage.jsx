@@ -1,13 +1,17 @@
 // import { useEffect, useState } from "react";
+import { useContext } from "react";
 import { useParams } from "react-router-dom"
 // import { productsConection } from "../../api/productApi";
 import data from '../../assets/db/db.json'
+import { ShoppingCartContext } from "../../context/shoppingCartContext/shoppingCartContext";
 
 //TODO estilo
 
 const ProductPage =() => {
     const { id : productId} = useParams();
   
+    const { addProduct,quitProduct} = useContext(ShoppingCartContext);
+
 
     // const [products,setProducts] = useState([])
   
@@ -38,6 +42,9 @@ const ProductPage =() => {
         <p>{name}</p>
         <p>{price}</p>
         <img src ={img} alt="product" />
+        <button onClick={()=>addProduct(id,name,price,img)}>+</button>
+        <button onClick={()=>quitProduct(id)}>-</button>
+
 
 
 

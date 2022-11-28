@@ -9,7 +9,7 @@ export const ShoppingCartProvider = ({children}) => {
  
  
 
-   const init= ()=> {
+   const init= _ => {
       return JSON.parse(sessionStorage.getItem('shoppingCart')) ?? []
    } 
 

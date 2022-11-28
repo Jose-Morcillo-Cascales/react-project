@@ -3,9 +3,15 @@ export const shoppingTypes = {
  clean:'clean_cart',
  quit:'quit_product'
 }
-//TODO Tambien exportar donde invocamos el dispatch
+
 export const authTypes = {
 login:'login',
 logout:'logout'
 
+}
+
+export const wishTypes = {
+ add:'add_wish',
+ quit:'quit_wish',
+ clean:'quit_all'   
 }

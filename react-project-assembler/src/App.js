@@ -5,6 +5,7 @@ import AllRoutes from './Routes/AllRoutes';
 import {ShoppingCartProvider} from './context/shoppingCartContext/ShoppingCartProvider'
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './context';
+import WhishListProvider from './context/whishListContext/WhishListProvider';
 function App() {
 
 
@@ -12,6 +13,7 @@ function App() {
    
     <>
     <AuthProvider>
+    <WhishListProvider>
       <ShoppingCartProvider> 
         <BrowserRouter>
           <NavBar />
@@ -19,6 +21,7 @@ function App() {
           <Footer />
         </BrowserRouter>
       </ShoppingCartProvider> 
+      </WhishListProvider>
     </AuthProvider>
     </>
 
